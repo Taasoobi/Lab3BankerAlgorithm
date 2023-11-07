@@ -20,18 +20,35 @@ scanf("%d", &p);
 printf("\n Enter number of resources: ");
 scanf("%d", &r);
 resource = malloc((p * r) * sizeof(int));
+max = malloc((p * r) * sizeof(int));
 
-printf("Enter number of units for resources (r0 to r%d): ", r-1);
+printf("\nEnter number of units for resources (r0 to r%d): ", r-1);
 for (int i = 0; i < r; i++){
     scanf("%d", &rUnit);
     resource[i] = rUnit;
     //available[i] = rUnit;
 }
 
-printf("\nunits for resources:");
+printf("\nunits for resources: ");
 for(int i = 0; i<r; i++){
 printf("%d ", resource[i]);
 }
+
+for(int i = 0; i<p; i++){
+    printf("\nEnter maximum number of units process p%d will request from each resource(r0 to r%d): ", i, r-1);
+    for(int j = 0; j<r; j++){
+        scanf("%d", &max[i*r+j]);
+    }
+}
+
+printf("\nMax Array: ");
+for (int i = 0; i < p; i++)
+{
+    printf("\n%d %d %d", max[i*r+0], max[i*r+1], max[i*r+2]);
+}
+
+
+
 }
 
 int main(){
