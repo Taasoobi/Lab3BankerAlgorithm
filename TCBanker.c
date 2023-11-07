@@ -21,6 +21,7 @@ printf("\n Enter number of resources: ");
 scanf("%d", &r);
 resource = malloc((p * r) * sizeof(int));
 max = malloc((p * r) * sizeof(int));
+allocated = malloc((p * r) * sizeof(int));
 
 printf("\nEnter number of units for resources (r0 to r%d): ", r-1);
 for (int i = 0; i < r; i++){
@@ -47,6 +48,20 @@ for (int i = 0; i < p; i++)
     printf("\n%d %d %d", max[i*r+0], max[i*r+1], max[i*r+2]);
 }
 
+for(int i = 0; i<p; i++){
+    printf("\nEnter number of units of each resource (r0 to r%d) allocated to process p%d: ", r-1, i);
+    for (int j = 0; j<r; j++)
+    {
+        scanf("%d", &allocated[i*r+j]);
+    }
+    
+}
+
+printf("\nAllocated Array");
+for (int i = 0; i < p; i++)
+{
+    printf("\n%d %d %d", allocated[i*r+0], allocated[i*r+1], allocated[i*r+2]);
+}
 
 
 }
