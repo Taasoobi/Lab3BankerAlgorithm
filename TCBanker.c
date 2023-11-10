@@ -63,10 +63,23 @@ for (int i = 0; i < p; i++)
     printf("\n%d %d %d", allocated[i*r+0], allocated[i*r+1], allocated[i*r+2]);
 }
 
+paramDisplay();
 
 }
 
-int main(){
+void paramDisplay(){
+    printf("\n          Max Claim           Current                 Potential ");
+    printf("\n      r0    r1    r2     "); printf(" r0    r1    r2      "); printf("    r0     r1     r2");
+    printf("\n----------------------------------------------------------------------------");
+    for(int i = 0; i<p; i++){
+        //                    Max Claim                 Current
+        //          p    r0     r1     r2        r0     r1      r2
+        printf("\np%d    %d     %d     %d       %d      %d      %d", i, max[i*r+0], max[i*r+1], max[i*r+2], allocated[i*r+0], allocated[i*r+1], allocated[i*r+2]);
+    }
+
+}
+
+int main(){ //test input: 1 5 3 10 5 7 7 5 3 3 2 2 9 0 2 2 2 2 4 3 3 0 1 0 2 0 0 3 0 2 2 1 1 0 0 2
     bool menu = true;
     int menuop;
 
